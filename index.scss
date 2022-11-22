@@ -33,7 +33,8 @@ section {
 
 .card {
     background: $color-neutral-white;
-    max-width: 400px;
+    max-width: 550px;
+    max-height: 350px;
     border-radius: 8px;
     display: flex;
     padding: 0;
@@ -43,16 +44,23 @@ section {
 
 .card-image {
     overflow: hidden;
+    flex-basis: 50%;
+    flex-grow: 1;
 }
 
 .card-image img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .card-content {
-    padding: 16px;
+    padding: 20px;
+    flex-basis: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-subtitle {
@@ -80,9 +88,12 @@ section {
     color: $color-primary-cyan;
     font-weight: 700;
     font-size: 28px;
+}
+
+.pricing p {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 
 .pricing span {
@@ -101,10 +112,16 @@ section {
     width: 100%;
     border: none;
     border-radius: 8px;
-    padding: 8px 0;
+    padding: 16px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: $color-neutral-darkblue;
 }
 
 .button img {
@@ -113,4 +130,17 @@ section {
 }
 
 @media only screen and (max-width: 375px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 250px;
+    } 
+
+    .image-replacement {
+        display: block;
+        background: url(images/image-product-mobile.jpg) no-repeat;
+    }
 }
