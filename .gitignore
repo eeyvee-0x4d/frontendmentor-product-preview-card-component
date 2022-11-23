@@ -16,3 +16,4 @@
 .prettierignore
 
 *.map
+.sass-cache
